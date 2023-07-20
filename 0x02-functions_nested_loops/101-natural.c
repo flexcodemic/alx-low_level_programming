@@ -10,10 +10,9 @@ int main(void)
 
 	for (i = 1; i < 1024; i++)
 	{
-		if ((i % 3 == 0) || (i % 5 == 0))
-				z += i;
+	if ((i % 3 == 0) || (i % 5 == 0))
+	z += i;
 	}
 	printf("%d\n", z);
-	return(0);
+	return (0);
 }
-				
