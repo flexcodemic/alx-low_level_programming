@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 *positive_or_negative - This file must test that the function
-*@i: The character is ASCII code
+*0: is the number to be checked
 *Return: Always 0 (Success)
 */
 void positive_or_negative(int i)
