@@ -11,6 +11,7 @@ int factorial(int n);
 int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
 int _sqrt_root(int x, int y);
+int is_divisible(int n, int divisor);
 int is_prime_number(int n);
 
 #endif /* MAIN_H */
