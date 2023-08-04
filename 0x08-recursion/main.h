@@ -14,6 +14,7 @@ int _sqrt_root(int x, int y);
 int is_divisible(int n, int divisor);
 int is_prime_number(int n);
 int is_palindrome(char *s);
+int wildcmpHelper(char *s1, char *s2);
 int wildcmp(char *s1, char *s2);
 int string_compare(char *s, int left, int right);
 int string_length(char *s);
