@@ -7,30 +7,40 @@
 *@s1: The first string to be concatenated
 *@s2: Second string to be concatenated
 *
-*Return: the pointer string
+*Return: the pointer string concatenated
 */
 char *str_concat(char *s1, char *s2)
 {
-	char *result;
-
-	size_t len1 = strlen(s1);
-	size_t len2 = strlen(s2);
+	int i = 0, j = 0, k = 0, l = 0;
+	char *ptr;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	l = i + j;
+	ptr = malloc((sizeof(char) * l) + 1);
 
-	result = (char *)malloc(len1 + len2 + 1);
-
-	if (result == NULL)
-	{
+	if (ptr == NULL)
 		return (NULL);
+	j = 0;
+
+	while (k < l)
+	{
+		if (k <= i)
+			ptr[k] = s1[k];
+		if (k >= i)
+		{
+			ptr[k] = s2[j];
+			j++;
+		}
+		k++;
 	}
-
-	strcpy(result, s1);
-	strcat(result, s2);
-
-	return (result);
+	ptr[k] = '\0';
+	return (ptr);
 }
 
