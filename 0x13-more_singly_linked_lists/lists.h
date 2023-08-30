@@ -19,6 +19,20 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+* struct list_p_s - this is the singly linked list
+* @p: pointer of the node in question
+* @next: the pointer to the next node
+*
+* Description: pointer singly linked list
+*/
+
+typedef struct list_p_s
+{
+	void *p;
+	struct list_p_s *next;
+} list_p_t;
+
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 int sum_listint(listint_t *head);
