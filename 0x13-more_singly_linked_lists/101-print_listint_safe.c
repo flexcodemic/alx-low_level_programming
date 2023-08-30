@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-* free_listd -list to be freed
+* free_list_p - list to be freed
 *
 *@head: pointer to the head of the list
 *
@@ -39,7 +39,10 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		recent = malloc(sizeof(list_p_t));
 		if (recent == NULL)
+		{
+			free_list_p(&shark);
 			exit(98);
+		}
 		recent->p = (void *)head;
 		recent->next = shark;
 		shark = recent;
@@ -49,12 +52,12 @@ size_t print_listint_safe(const listint_t *head)
 			add = add->next;
 			if (head == add->p)
 			{
-				printf("->[%p] %d\n", (void *)head, head->n);
+				printf("-> [%p] %d\n", (void *)head, head->n);
 				free_list_p(&shark);
 				return (counter);
 			}
 		}
-		printf("[%p] %d\n", (void *)head, head->n);
+		printf("[%p] %d\n", (const void *)head, head->n);
 		head = head->next;
 		counter++;
 	}
