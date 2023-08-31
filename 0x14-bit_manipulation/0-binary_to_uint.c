@@ -10,10 +10,10 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int power = 0;
+	int pwr = 0;
 	unsigned int result = 0;
 	int i;
-	int digit;
+	int my_digit;
 
 	if (b == NULL)
 	{
@@ -25,9 +25,9 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		digit = b[i] - '0';
-		result += digit * (1 << power);
-		power++;
+		my_digit = b[i] - '0';
+		result += my_digit * (1 << pwr);
+		pwr++;
 	}
 	return (result);
 }
