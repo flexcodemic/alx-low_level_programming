@@ -2,6 +2,13 @@
 #define _MAIN_H_
 
 
+#define USAGE_ERROR 97
+#define READ_ERROR 98
+#define WRITE_ERROR 99
+#define CLOSE_ERROR 100
+#define MY_BUFFER_SIZE 1024
+
+
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
