@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * handle_file_error - check for error for an open file
  *
@@ -9,7 +8,6 @@
  *
  * Return: Nothing
  */
-
 void handle_file_error(int file_incoming, int file_outgoing, char *argv[])
 {
 	if (file_incoming == -1)
@@ -23,7 +21,6 @@ void handle_file_error(int file_incoming, int file_outgoing, char *argv[])
 		exit(99);
 	}
 }
-
 /**
  * main - Entry point
  *
@@ -32,14 +29,10 @@ void handle_file_error(int file_incoming, int file_outgoing, char *argv[])
  *
  * Return: Always 0 (Successful).
  */
-
 int main(int argc, char *argv[])
 {
-	int file_incoming;
-	int file_outgoing;
-	int my_error;
-	ssize_t chars_num;
-	ssize_t write_me;
+	int file_incoming, file_outgoing, my_error;
+	ssize_t chars_num, write_me;
 	char buffer_container[1024];
 
 	if (argc != 3)
