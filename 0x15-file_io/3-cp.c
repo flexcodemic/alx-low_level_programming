@@ -44,14 +44,16 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
 	file_incoming = open(argv[1], O_RDONLY);
-	file_outgoing = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_outgoing = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	handle_file_error(file_incoming, file_outgoing, argv);
-	while ((chars_num = read(file_incoming, buffer_container, 1024)) > 0)
+	chars_num = 1024;
+	while (chars_num == 1024)
 	{
+		chars_num = read(file_incoming, buffer_container, 1024);
 		if (chars_num == -1)
 		{
 			handle_file_error(-1, 0, argv);
