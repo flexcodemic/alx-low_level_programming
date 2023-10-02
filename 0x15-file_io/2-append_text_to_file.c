@@ -14,7 +14,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	int file_desc;
 	ssize_t read_write_me;
 	size_t letters_num;
-	
+
 	if (!filename)
 	{
 		return (-1);
